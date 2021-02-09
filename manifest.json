@@ -1,0 +1,26 @@
+{
+	"name": "Mobile Game",
+	"short_name": "Mobile Game",
+
+	"start_url": "./",
+	"display": "fullscreen",
+	"orientation": "landscape",
+
+	"background_color": "#181818",
+	"theme_color": "#181818",
+
+	"icons": [
+		{
+			"src": "img/icon192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "img/icon512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	]
+}
