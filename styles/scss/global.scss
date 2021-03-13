@@ -1,0 +1,27 @@
+// sass --no-source-map --watch styles/scss:styles
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+// Full page
+html,
+body {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+// Hide on null section
+pwa-mge:not([section]) {
+	opacity: 0;
+	pointer-events: none;
+}
+
+mge-joystick {
+	--tip-color: blue;
+	background-color: green;
+}

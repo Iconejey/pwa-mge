@@ -4,71 +4,46 @@
 		<meta charset="UTF-8" />
 		<title>Mobile Game Engine</title>
 
-		<!-- [Optional] App compatibility and display adaptation -->
+		<!-- App compatibility and display adaptation -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 
-		<!-- [Optional] Theme color / icon -->
-		<meta name="theme-color" content="#181818" />
+		<!-- Theme / icon -->
+		<meta name="theme-color" content="#202124" />
 		<meta name="color-scheme" content="dark" />
-		<link rel="shortcut icon" href="./img/icon512.png" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="./img/icon192.png" />
+		<link rel="shortcut icon" href="./img/round512.png" type="image/x-icon" />
+		<link rel="apple-touch-icon" sizes="192x192" href="./img/mask192.png" type="image/png" />
+		<link id="favicon" rel="shortcut icon" type="image/png" href="./img/round512.png" src="./img/round512.png" />
 
-		<!-- [Required] Manifest and stylesheet -->
-		<link rel="manifest" href="./manifest.json" />
-		<link rel="stylesheet" href="./mge.css" />
+		<!-- Manifest and stylesheet -->
+		<link rel="manifest" href="./manifest.webmanifest" />
 		<link rel="stylesheet" href="./style.css" />
+
+		<!-- Scripts -->
+		<script src="./src/pwa-mge.js"></script>
+		<script src="./main.js"></script>
 	</head>
 	<body>
-		<!-- [Required] Mobile Game Engine Element -->
-		<div class="mge-main">
-			<!-- [Required] Game canvas -->
-			<canvas id="mge-can"></canvas>
+		<!-- Game Engine Element -->
+		<pwa-mge section="blank">
+			<mge-section id="blank">
+				<a class="btn" onclick="mge.section = 'example';">Button</a>
+			</mge-section>
 
-			<!-- [Required] Touch screen -->
-			<div class="tactile">
-				<span class="joystick left base"></span>
-				<span class="joystick left tip"></span>
+			<mge-section id="landscape" pausing>
+				<p>Screen not held in landscape mode.</p>
+			</mge-section>
 
-				<span class="joystick right base"></span>
-				<span class="joystick right tip"></span>
-			</div>
+			<mge-section id="fullscreen" pausing>
+				<p>Game not in fullscreen.<br />Tap on screen to go fullscreen.<br /><span id="res"></span></p>
+			</mge-section>
 
-			<!-- [Required] Sections shown over canvas using mge.setOverlay(id) -->
-			<div class="mge-overlay">
-				<!-- [Required] Blank section -->
-				<section id="blank">
-					<span id="fps">0</span>
-					<a class="button" onclick="alert('button')">Button</a>
-				</section>
-
-				<!-- [Required] Lanscape opaque section -->
-				<section id="landscape" class="opaque">
-					<p>Over the canvas when screen not held in landscape mode.</p>
-				</section>
-
-				<!-- [Required] Fullscreen opaque section -->
-				<section id="fullscreen" class="opaque">
-					<p>Over the canvas when game not in fullscreen and mge.forceFulscreen is true.<br />Tap on screen to go fullscreen.</p>
-				</section>
-
-				<!-- [Optional] Custom transparent section -->
-				<section id="example">
-					<p>Example of custom overlay.</p>
-					<a onclick="mge.setOverlay(null)">[exit]</a>
-					<img src="./img/icon192.png" alt="icon" />
-				</section>
-			</div>
-		</div>
-
-		<!-- [Optional] Cookie tools -->
-		<script src="./cookie.js"></script>
-
-		<!-- [Required] Mobile Game Engine -->
-		<script src="./mge.js"></script>
-
-		<!-- [Required] Main script -->
-		<script src="./main.js"></script>
+			<mge-section id="example">
+				<img src="./img/mask512.png" alt="icon" />
+				<p>Example of custom section.</p>
+				<a class="btn" onclick="mge.section = 'blank';">Back to game</a>
+			</mge-section>
+		</pwa-mge>
 	</body>
 </html>

@@ -1,54 +1,58 @@
-/* Html */
-html {
-	background-color: #181818;
-	font-family: monospace;
+* {
+	font-family: sans-serif;
 }
 
-/* Style applied to canvas */
-.mge-main canvas#mge-can {
-	height: 200vh;
+mge-section {
+	--blue: #8888ff;
+	--black: #202124;
+	background-color: var(--blue);
+	color: var(--black);
 }
 
-/* Style applied to canvas when the example section is shown */
-.mge-main canvas.on-example-section {
-	filter: blur(5px);
+a.btn {
+	margin: 20px 0px;
+	padding: 10px;
+	background-color: var(--black);
+	border: 2px solid var(--blue);
+	color: var(--blue);
+	border-radius: 10px;
+	user-select: none;
 }
 
-/* Style applied to example section image */
-.mge-overlay section#example img {
-	position: absolute;
-	width: 64px;
+a.btn:hover {
+	background-color: #303236;
+}
+
+mge-section#blank a.btn {
+	position: fixed;
+	bottom: 0px;
 	left: 50%;
-	top: 50%;
-	border-radius: 20%;
-	transform: translate(-50%, -50%);
-}
-
-/* Fps span shown over canvas */
-span#fps {
-	position: absolute;
-	padding: 5vh 6vh;
-	font-size: 6vh;
-	font-family: monospace;
-	user-select: none;
-}
-
-/* Button shown over canvas */
-a.button {
-	position: absolute;
-	background-color: #fff2;
-	left: 50vw;
-	top: 80vh;
 	transform: translateX(-50%);
-	padding: 2vh 3vh;
-	font-size: 8vh;
-	font-family: monospace;
-	border-radius: 2vh;
-	outline: none;
-	user-select: none;
 }
 
-/* Opaque sections's background */
-.mge-overlay section.opaque {
-	background-color: #181818;
+mge-section[pausing] p {
+	text-align: center;
+	margin-top: 50vh;
+	transform: translateY(-50%);
+}
+
+mge-section#example {
+	background-color: transparent;
+	color: var(--blue);
+}
+
+mge-section#example {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+mge-section#example img {
+	width: 64px;
+	border-radius: 64px;
+	margin: 10px;
+	border: 2px solid var(--blue);
+	user-select: none;
 }

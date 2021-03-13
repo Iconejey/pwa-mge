@@ -1,23 +1,23 @@
 {
-	"name": "Mobile Game",
-	"short_name": "Mobile Game",
+	"name": "WEB Game",
+	"short_name": "WEB Game",
 
 	"start_url": "./",
 	"display": "fullscreen",
-	"orientation": "landscape",
+	"orientation": "any",
 
-	"background_color": "#181818",
-	"theme_color": "#181818",
+	"background_color": "#202124",
+	"theme_color": "#202124",
 
 	"icons": [
 		{
-			"src": "img/icon192.png",
+			"src": "img/mask192.png",
 			"sizes": "192x192",
 			"type": "image/png",
 			"purpose": "maskable"
 		},
 		{
-			"src": "img/icon512.png",
+			"src": "img/mask512.png",
 			"sizes": "512x512",
 			"type": "image/png",
 			"purpose": "maskable"

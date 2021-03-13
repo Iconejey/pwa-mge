@@ -1,0 +1,7 @@
+canvas {
+	background-color: #202124;
+}
+
+/* :host([section='example']) canvas {
+	filter: blur(5px);
+} */

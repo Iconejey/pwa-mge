@@ -1,0 +1,113 @@
+:host {
+  transition: opacity 0.5s;
+  --tip-size: 13vh;
+  --tip-color: white;
+  --tip-min-opacity: 0;
+  --tip-max-opacity: 1;
+  --base-size: 27vh;
+  --base-color: white;
+  --base-min-opacity: 0;
+  --base-max-opacity: 1;
+}
+:host span {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: appear 0.5s;
+}
+:host span.tip {
+  transition: opacity 0.5s, left 0.5s, top 0.5s;
+  left: var(--base-x);
+  top: var(--base-y);
+  background-color: var(--tip-color);
+  opacity: var(--tip-min-opacity);
+  width: var(--tip-size);
+  height: var(--tip-size);
+}
+:host span.base {
+  transition: opacity 0.5s, width 0.5s, height 0.5s, left 0.5s, top 0.5s;
+  left: var(--base-x);
+  top: var(--base-y);
+  border: 1vh solid var(--base-color);
+  opacity: var(--base-min-opacity);
+  width: var(--base-size);
+  height: var(--base-size);
+}
+
+:host(#left) {
+  --tip-x: 20%;
+  --tip-y: 70%;
+  --base-x: 20%;
+  --base-y: 70%;
+}
+
+:host(#right) {
+  --tip-x: 80%;
+  --tip-y: 70%;
+  --base-x: 80%;
+  --base-y: 70%;
+}
+
+:host-context(pwa-mge:not([section=blank])),
+:host-context(pwa-mge[temp]) {
+  opacity: 0;
+}
+
+:host([fixed]) {
+  --tip-min-opacity: 0.2;
+  --base-min-opacity: 0.2;
+}
+
+:host([state=tap]) span.tip {
+  transition: none;
+  left: var(--base-x);
+  top: var(--base-y);
+  opacity: var(--tip-max-opacity);
+}
+
+:host([state=push]) span.tip {
+  transition: none;
+  left: var(--tip-x);
+  top: var(--tip-y);
+  opacity: var(--tip-max-opacity);
+}
+:host([state=push]) span.base {
+  transition: opacity 0.2s;
+  opacity: var(--base-max-opacity);
+}
+
+:host([state=held]) span.tip {
+  transition: none;
+  animation: hold 0.4s;
+  left: var(--tip-x);
+  top: var(--tip-y);
+  opacity: var(--tip-max-opacity);
+}
+:host([state=held]) span.base {
+  transition: opacity 0.5s, width 0.5s, height 0.5s;
+  animation: hold 0.4s;
+  left: var(--tip-x);
+  top: var(--tip-y);
+  width: calc(var(--tip-size) - 2vh);
+  height: calc(var(--tip-size) - 2vh);
+  opacity: var(--tip-max-opacity);
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+}
+@keyframes hold {
+  from {
+    left: var(--base-x);
+    top: var(--base-y);
+  }
+  to {
+    left: var(--tip-x);
+    top: var(--tip-y);
+  }
+}
