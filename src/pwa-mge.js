@@ -188,6 +188,29 @@ class GameEngineElement extends HTMLElement {
 
 		return this.appendChild(s);
 	}
+
+	// Images
+	loadImages(src_list) {
+		let n = 0;
+		let promises = [];
+
+		for (let src of src_list) {
+			promises.push(
+				new Promise((res, err) => {
+					let img = document.createElement('img');
+					img.src = src;
+
+					img.addEventListener('load', e => {
+						n++;
+						this.dispatchEvent(new CustomEvent('img-load-progress', { detail: { src: src, progress: n / src_list.length }, bubbles: true, composed: true }));
+						res(img);
+					});
+				})
+			);
+		}
+
+		return Promise.all(promises);
+	}
 }
 
 customElements.define('pwa-mge', GameEngineElement);
