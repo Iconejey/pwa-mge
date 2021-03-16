@@ -12,7 +12,7 @@ class GameEngineElement extends HTMLElement {
 		this.root = this.attachShadow({ mode: 'open' });
 
 		this.root.innerHTML = `
-			<link rel="stylesheet" href="./styles/pwa-mge.css">
+			<link rel="stylesheet" href="https://iconejey.github.io/pwa-mge/styles/pwa-mge.css">
 			<link id="inner-css" rel="stylesheet">
 			<canvas></canvas>
 			<div class="tactile" oncontextmenu="return false"></div>

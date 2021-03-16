@@ -28,7 +28,7 @@ class GameJoystick extends HTMLElement {
 		// Shadow Root
 		this.root = this.attachShadow({ mode: 'open' });
 		this.root.innerHTML = `
-			<link rel="stylesheet" href="./styles/joystick.css">
+			<link rel="stylesheet" href="https://iconejey.github.io/pwa-mge/styles/joystick.css">
 			<span class="base"></span>
 			<span class="tip"></span>
 		`;

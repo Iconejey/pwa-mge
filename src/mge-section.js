@@ -8,7 +8,7 @@ customElements.define(
 			this.root = this.attachShadow({ mode: 'open' });
 
 			this.root.innerHTML = `
-				<link rel="stylesheet" href="./styles/section.css">
+				<link rel="stylesheet" href="https://iconejey.github.io/pwa-mge/styles/section.css">
 				<style></style>
 				<slot></slot>
 			`;
