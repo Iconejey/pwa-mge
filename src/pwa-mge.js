@@ -215,7 +215,7 @@ class GameEngineElement extends HTMLElement {
 
 customElements.define('pwa-mge', GameEngineElement);
 
-document.write('<script src="./src/mge-section.js"></script>');
-document.write('<script src="./src/mge-joystick.js"></script>');
-document.write('<script src="./src/cookie.js"></script>');
-document.write('<link rel="stylesheet" href="./styles/global.css" />');
+document.write('<script src="https://iconejey.github.io/pwa-mge/src/mge-section.js"></script>');
+document.write('<script src="https://iconejey.github.io/pwa-mge/src/mge-joystick.js"></script>');
+document.write('<script src="https://iconejey.github.io/pwa-mge/src/cookie.js"></script>');
+document.write('<link rel="stylesheet" href="https://iconejey.github.io/pwa-mge/styles/global.css" />');
