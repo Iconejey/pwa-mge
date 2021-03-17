@@ -1,4 +1,6 @@
-let mge;
+customElements.define('pwa-mge', GameEngineElement);
+
+let mge = null;
 
 addEventListener('load', e => {
 	// pwa-mge element

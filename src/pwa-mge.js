@@ -213,7 +213,7 @@ class GameEngineElement extends HTMLElement {
 	}
 }
 
-customElements.define('pwa-mge', GameEngineElement);
+// customElements.define('pwa-mge', GameEngineElement);
 
 document.write('<script src="https://iconejey.github.io/pwa-mge/src/mge-section.js"></script>');
 document.write('<script src="https://iconejey.github.io/pwa-mge/src/mge-joystick.js"></script>');
